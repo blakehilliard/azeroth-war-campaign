@@ -148,7 +148,7 @@ def generate_overlayed_map(
     # Add text on top
     draw = ImageDraw.Draw(img)
     for territory in territories:
-        draw.polygon(territory.coords, outline="black", width=4)
+        draw.polygon(territory.coords, outline="black", width=1)
         text = territory.name
         guild = get_controlling_guild_of_territory(territory, guilds)
         if guild is not None:
@@ -180,7 +180,7 @@ def main():
     continents = (kalimdor,)
     zones = (
         Zone(ZoneEnum.ASHENVALE, kalimdor, 1873, 3822, 4557, 5402),
-        Zone(ZoneEnum.BARRENS, kalimdor, 2901, 5136, 6760, 8413),
+        Zone(ZoneEnum.BARRENS, kalimdor, 2901, 5136, 4760, 8413),
     )
     guilds = (
         Guild("Red Sand Charter", "RSC", FactionEnum.HORDE, (
@@ -245,40 +245,40 @@ def main():
         
         # -- BARRENS -- #
         # Northeastern Barrens
-        Territory("Mor'shan Ramparts", ZoneEnum.BARRENS, ((3550, 5350), (3900, 5350), (3900, 5700), (3550, 5700))),
-        Territory("Far Watch Post", ZoneEnum.BARRENS, ((4150, 5725), (4150, 5933), (4370, 5933), (4370, 5725))),
-        Territory("The Sludge Fen", ZoneEnum.BARRENS, ((3928, 5313), (4228, 5313), (4228, 5613), (3928, 5613))),
-        Territory("Boulder Lode Mine", ZoneEnum.BARRENS, ((4230, 5225), (4230, 5420), (4440, 5420), (4440, 5225))),
+        Territory("Mor'shan Ramparts", ZoneEnum.BARRENS, ((3550, 5350), (3860, 5350), (3860, 5700), (3550, 5700))),
+        Territory("Far Watch Post", ZoneEnum.BARRENS, ((3950, 5725), (3950, 5933), (4370, 5933), (4370, 5725))),
+        Territory("The Sludge Fen", ZoneEnum.BARRENS, ((3860, 5290), (3860, 5613), (4220, 5613), (4220, 5290))),
+        Territory("Boulder Lode Mine", ZoneEnum.BARRENS, ((4220, 5225), (4220, 5500), (4440, 5500), (4440, 5225))),
         # Northwestern Barrens
-        #Territory("Honor's Stand (C, S)", (())),
-        #Territory("The Dry Hills", (())),
-        #Territory("The Forgotten Pools", (())),
-        #Territory("Dreadmist Peak", (())),
-        #Territory("Vrang's House", (())),
+        Territory("Honor's Stand", ZoneEnum.BARRENS, ((2963, 5985), (2963, 6182), (3310, 6182), (3310, 5985))),
+        Territory("The Dry Hills", ZoneEnum.BARRENS, ((3000, 5435), (3000, 5780), (3348, 5780), (3348, 5435))),
+        Territory("The Forgotten Pools", ZoneEnum.BARRENS, ((3378, 5859), (3378, 6155), (3600, 6155), (3600, 5945), (3528, 5859))),
+        Territory("Dreadmist Peak", ZoneEnum.BARRENS, ((3528, 5700), (3528, 5859), (3600, 5945), (3815, 5945), (3815, 5700))),
+        Territory("Vrang's House", ZoneEnum.BARRENS, ((3348, 5435), (3348, 5700), (3550, 5700), (3550, 5435))),
         # Central Barrens
-        #Territory("Crossroads (C, S)", (())),
-        #Territory("The Stagnant Oasis", (())),
-        #Territory("Lushwater Oasis", (())),
-        #Territory("Wailing Caverns", (())),
-        #Territory("Thorn Hill", (())),
+        Territory("Crossroads", ZoneEnum.BARRENS, ((3724, 5945), (3724, 6300), (3950, 6300), (3950, 5945))),
+        Territory("The Stagnant Oasis", ZoneEnum.BARRENS, ((3850, 6450), (3850, 6725), (4160, 6725), (4160, 6450))),
+        Territory("Lushwater Oasis", ZoneEnum.BARRENS, ((3463, 6375), (3463, 6580), (3750, 6580), (3750, 6375))),
+        Territory("Wailing Caverns", ZoneEnum.BARRENS, ((3463, 6184), (3463, 6375), (3724, 6375), (3724, 6184))),
+        Territory("Thorn Hill", ZoneEnum.BARRENS, ((3950, 5933), (3950, 6300), (4270, 6300), (4270, 5933))),
         # Eastern Barrens
-        Territory("Northwatch Hold", ZoneEnum.BARRENS, ((4200, 6875), (4200, 7075), (4436, 7075), (4436, 6875))),
-        Territory("Ratchet", ZoneEnum.BARRENS, ((4225, 6300), (4225, 6520), (4475, 6520), (4475, 6300))),
-        Territory("Merchant Coast", ZoneEnum.BARRENS, ((4340, 6560), (4340, 6840), (4533, 6840), (4533, 6560))),
+        Territory("Northwatch Hold", ZoneEnum.BARRENS, ((4200, 6840), (4200, 7075), (4436, 7075), (4436, 6840))),
+        Territory("Ratchet", ZoneEnum.BARRENS, ((4160, 6300), (4160, 6530), (4480, 6530), (4480, 6300))),
+        Territory("Merchant Coast", ZoneEnum.BARRENS, ((4300, 6530), (4300, 6840), (4533, 6840), (4533, 6530))),
         Territory("Fray Island", ZoneEnum.BARRENS, ((4533, 6666), (4533, 6860), (4763, 6860), (4763, 6666))),
-        Territory("Raptor Grounds", ZoneEnum.BARRENS, ((4000, 6830), (4000, 7040), (4200, 7040), (4200, 6830))),
+        Territory("Raptor Grounds", ZoneEnum.BARRENS, ((3975, 6840), (3975, 7040), (4200, 7040), (4200, 6840))),
         # Lower Barrens
-        Territory("Camp Taurajo", ZoneEnum.BARRENS, ((3310, 7025), (3310, 7180), (3650, 7180), (3650, 7025))),
+        Territory("Camp Taurajo", ZoneEnum.BARRENS, ((3310, 7025), (3310, 7250), (3666, 7250), (3666, 7025))),
         Territory("Field of Giants", ZoneEnum.BARRENS, ((3325, 7375), (3325, 7575), (3775, 7575), (3775, 7375))),
-        Territory("Agama'gor", ZoneEnum.BARRENS, ((3370, 6800), (3370, 7025), (3666, 7025), (3666, 6800))),
-        Territory("Bramblescar", ZoneEnum.BARRENS, ((3666, 6825), (3666, 7120), (3965, 7120), (3965, 6825))),
-        Territory("Shady Rest Inn", ZoneEnum.BARRENS, ((3650, 7650), (3650, 7830), (3830, 7830), (3838, 7650))),
+        Territory("Agama'gor", ZoneEnum.BARRENS, ((3370, 6700), (3370, 7025), (3666, 7025), (3666, 6700))),
+        Territory("Bramblescar", ZoneEnum.BARRENS, ((3666, 6825), (3666, 7120), (3975, 7120), (3975, 6825))),
+        Territory("Shady Rest Inn", ZoneEnum.BARRENS, ((3564, 7650), (3564, 7800), (3800, 7800), (3800, 7650))),
         # Southern Barrens
-        Territory("Bael'dun Keep", ZoneEnum.BARRENS, ((3580, 7830), (3580, 7900), (3800, 7980), (3800, 7830))),
-        Territory("Bael Modan Digsite", ZoneEnum.BARRENS, ((3580, 7900), (3580, 8030), (3800, 8125), (3800, 7980))),
-        #Territory("The Great Lift", (())),
-        #Territory("Blackthorn Ridge", (())),
-        #Territory("Razorfen Downs", (())),
+        Territory("Bael'dun Keep", ZoneEnum.BARRENS, ((3564, 7800), (3564, 7900), (3800, 7980), (3800, 7800))),
+        Territory("Bael Modan Digsite", ZoneEnum.BARRENS, ((3564, 7900), (3564, 8030), (3800, 8125), (3800, 7980))),
+        Territory("The Great Lift", ZoneEnum.BARRENS, ((3380, 8130), (3380, 8250), (3525, 8250), (3525, 8130))),
+        Territory("Blackthorn Ridge", ZoneEnum.BARRENS, ((3226, 7666), (3226, 7930), (3564, 7930), (3564, 7666))),
+        Territory("Razorfen Downs", ZoneEnum.BARRENS, ((3525, 8030), (3525, 8190), (3807, 8410), (4010, 8410), (4010, 8286), (3800, 8125), (3564, 8030))),
     )
 
     assert_sanity(territories, guilds)
