@@ -193,6 +193,10 @@ def main():
         Guild("Dwarven Overlords", "DO", FactionEnum.ALLIANCE, (
             "Shady Rest Inn",
             "Bael'dun Keep",
+            "Bael Modan Digsite",
+            "The Great Lift",
+            "Blackthorn Ridge",
+            "Razorfen Downs",
         )),
         Guild("Azeroth Adventurer Guild", "AAG", FactionEnum.ALLIANCE, (
             "Roadside Inn",
